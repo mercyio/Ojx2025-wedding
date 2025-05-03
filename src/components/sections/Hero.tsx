@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [audio] = useState(new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'));
+  const [audio] = useState(new Audio('/wedding-song.mp3')); // Updated to use local file
 
   useEffect(() => {
     audio.loop = true;
@@ -24,29 +24,29 @@ const Hero = () => {
   };
 
   // Floating flowers animation
-  const flowers = Array.from({ length: 20 }, (_, i) => (
-    <motion.div
-      key={i}
-      className="absolute h-4 w-4 opacity-60"
-      initial={{
-        x: Math.random() * window.innerWidth,
-        y: -20,
-        rotate: 0,
-      }}
-      animate={{
-        y: window.innerHeight + 20,
-        x: `calc(${Math.random() * 100}vw)`,
-        rotate: 360,
-      }}
-      transition={{
-        duration: Math.random() * 10 + 15,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      <div className="w-full h-full bg-gold-200 rounded-full transform rotate-45" />
-    </motion.div>
-  ));
+  // const flowers = Array.from({ length: 20 }, (_, i) => (
+  //   <motion.div
+  //     key={i}
+  //     className="absolute h-4 w-4 opacity-60"
+  //     initial={{
+  //       x: Math.random() * window.innerWidth,
+  //       y: -20,
+  //       rotate: 0,
+  //     }}
+  //     animate={{
+  //       y: window.innerHeight + 20,
+  //       x: `calc(${Math.random() * 100}vw)`,
+  //       rotate: 360,
+  //     }}
+  //     transition={{
+  //       duration: Math.random() * 10 + 15,
+  //       repeat: Infinity,
+  //       ease: "linear",
+  //     }}
+  //   >
+  //     <div className="w-full h-full bg-gold-200 rounded-full transform rotate-45" />
+  //   </motion.div>
+  // ));
 
   // Light rays effect
   const rays = Array.from({ length: 4 }, (_, i) => (
@@ -79,8 +79,8 @@ const Hero = () => {
         {rays}
       </div>
       
-      {/* Floating Elements */}
-      {flowers}
+      {/* Floating Elements
+      {flowers} */}
       
       {/* Music Control */}
       <button 

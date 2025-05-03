@@ -76,14 +76,27 @@ const WeddingDetails = () => {
         })}
       </div>
       
-      {/* Contact section moved above reception */}
-      <div className="text-center max-w-2xl mx-auto mb-34"> {/* Increased margin bottom */}
-        <p className="text-gray-700 mb-8 text-lg">We're so excited to celebrate our special day with you. If you have any questions about the wedding, please don't hesitate to contact us.</p>
-        <Button variant="secondary" className="group shadow-md hover:shadow-lg transition-shadow">
-          <Phone className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-          Contact Us
-        </Button>
-      </div>
+     {/* Contact section moved above reception */}
+        <div className="text-center max-w-2xl mx-auto mb-34"> {/* Increased margin bottom */}
+          <p className="text-gray-700 mb-8 text-lg">
+              {/* We're so excited to celebrate our special day with you. If you have any questions about the wedding, please don't hesitate to contact us. */}
+          </p>
+        <div className="flex justify-center mb-8"> {/* Added margin bottom for spacing */}
+           {/* <Button variant="secondary" className="group shadow-md hover:shadow-lg transition-shadow">
+            <Phone className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+             Contact Us
+            </Button> */}
+       </div>
+  
+                  {/* Love quote with bold teal green text */}
+               <blockquote className="mt-40">
+              <p className="text-xl md:text-2xl font-extrabold text-teal-600 italic">
+                      "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
+             </p>
+                <footer className="mt-2 text-gray-600">— Maya Angelou</footer>
+               </blockquote>
+            </div>
+
       
       {/* Reception section moved down with added margin top */}
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden mt-40"> {/* Added margin top */}

@@ -35,7 +35,7 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-pattern': "url('https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+        'hero-pattern': "url('public/images/image-1.jpg')",
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',

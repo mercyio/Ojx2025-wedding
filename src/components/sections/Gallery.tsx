@@ -10,35 +10,35 @@ const Gallery = () => {
   // Sample gallery images
   const galleryImages = [
     {
-      src: "https://images.pexels.com/photos/1247732/pexels-photo-1247732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-1.jpg",
       alt: "Couple by the sea"
     },
     {
-      src: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-2.jpg",
       alt: "Couple in garden"
     },
     {
-      src: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-3.jpg",
       alt: "Couple laughing"
     },
     {
-      src: "https://images.pexels.com/photos/1927162/pexels-photo-1927162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-4.jpg",
       alt: "Couple walking"
     },
     {
-      src: "https://images.pexels.com/photos/3585798/pexels-photo-3585798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-5.jpg",
       alt: "Couple at sunset"
     },
     {
-      src: "https://images.pexels.com/photos/3589903/pexels-photo-3589903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-1.jpg",
       alt: "Couple close up"
     },
     {
-      src: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-2.jpg",
       alt: "Couple dancing"
     },
     {
-      src: "https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      src: "public/images/image-3.jpg",
       alt: "Bride and groom"
     },
   ];

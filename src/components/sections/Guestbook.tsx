@@ -122,30 +122,9 @@ const Guestbook = () => {
             </div>
           </form>
         </div>
-        
-        {/* Message List */}
-        <div className="space-y-6">
-          {messages.map((msg, index) => (
-            <motion.div
-              key={msg.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-teal-50 to-white p-6 rounded-xl shadow-md relative overflow-hidden group hover:shadow-lg transition-shadow"
-            >
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gold-100 rounded-full -translate-y-12 translate-x-12 opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
-              
-              <Heart className="absolute top-4 right-4 h-5 w-5 text-gold-400 group-hover:scale-125 transition-transform" />
-              
-              <h4 className="font-serif text-xl text-teal-800 mb-3">{msg.name}</h4>
-              <p className="text-gray-700 mb-3 relative z-10">{msg.message}</p>
-              <p className="text-sm text-gray-500">{msg.date}</p>
-            </motion.div>
-          ))}
-        </div>
       </motion.div>
     </div>
-  );
-};
+  ) 
+}
 
 export default Guestbook;
