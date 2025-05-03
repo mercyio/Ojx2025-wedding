@@ -1,0 +1,124 @@
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { Calendar, Clock, MapPin, Gift, Plus, Phone } from 'lucide-react';
+import SectionTitle from '../ui/SectionTitle';
+import Button from '../ui/Button';
+
+const WeddingDetails = () => {
+  const details = [
+    {
+      title: "Ceremony Date",
+      icon: <Calendar className="h-8 w-8 text-gold-500" />,
+      description: "Saturday, May 24, 2025",
+      extra: "We're excited to celebrate this day with you!"
+    },
+    {
+      title: "Ceremony Time",
+      icon: <Clock className="h-8 w-8 text-gold-500" />,
+      description: "2:00 PM",
+      extra: "Please arrive 30 minutes early for seating"
+    },
+    {
+      title: "Venue",
+      icon: <MapPin className="h-8 w-8 text-gold-500" />,
+      description: "The Grandeur Place",
+      extra: "Lekki Phase 1, Lagos"
+    },
+    {
+      title: "Dress Code",
+      icon: <Gift className="h-8 w-8 text-gold-500" />,
+      description: "Regal in Teal & Touch of Gold",
+      extra: "We'd be honored if you incorporated our colors"
+    }
+  ];
+
+  return (
+    <div className="container mx-auto px-4 md:px-6">
+      <SectionTitle
+        title="Wedding Details"
+        subtitle="All the information you need to join us on our special day"
+      />
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
+        {details.map((detail, index) => {
+          const [ref, inView] = useInView({
+            triggerOnce: true,
+            threshold: 0.1,
+          });
+          
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="bg-gradient-to-br from-white to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden border border-teal-100/50">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold-200 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="flex items-start gap-6 relative z-10">
+                  <div className="p-3 bg-white rounded-xl shadow-md group-hover:scale-110 transition-transform">
+                    {detail.icon}
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-serif text-xl text-teal-800 mb-2">{detail.title}</h3>
+                    <p className="text-gray-700 font-medium mb-1">{detail.description}</p>
+                    <p className="text-gray-500 text-sm">{detail.extra}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+      
+      {/* Contact section moved above reception */}
+      <div className="text-center max-w-2xl mx-auto mb-34"> {/* Increased margin bottom */}
+        <p className="text-gray-700 mb-8 text-lg">We're so excited to celebrate our special day with you. If you have any questions about the wedding, please don't hesitate to contact us.</p>
+        <Button variant="secondary" className="group shadow-md hover:shadow-lg transition-shadow">
+          <Phone className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+          Contact Us
+        </Button>
+      </div>
+      
+      {/* Reception section moved down with added margin top */}
+      <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden mt-40"> {/* Added margin top */}
+        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
+        
+        <div className="relative z-10">
+          <h3 className="font-serif text-3xl text-teal-800 mb-6 text-center">Reception</h3>
+          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for dinner, dancing, and celebration at the same venue starting at 5:00 PM.</p>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <Button variant="primary" className="group">
+              <Plus className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform" />
+              Add to Google Calendar
+            </Button>
+            <Button variant="outline" className="group">
+              <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              Add to Apple Calendar
+            </Button>
+          </div>
+          
+          <div className="rounded-2xl overflow-hidden h-64 md:h-96 shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63427.97620343787!2d3.4320397249145417!3d6.4350887806112945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53280e7648d%3A0x4dd23d3681f7e9a!2sLekki%20Phase%201%2C%20Lekki%2C%20Lagos!5e0!3m2!1sen!2sng!4v1637309179085!5m2!1sen!2sng"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title="Wedding Venue"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WeddingDetails;
