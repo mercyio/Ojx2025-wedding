@@ -70,7 +70,7 @@ const RSVP = () => {
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto"
       >
-        <div className="relative rounded-2xl shadow-xl overflow-hidden border border-gold-300 bg-teal-600">
+        <div className="relative rounded-2xl shadow-xl overflow-hidden border border-gold-300 bg-teal-50">
           {/* Decorative gradient borders */}
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gold-400 via-white to-gold-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
           <div className="absolute -left-16 -top-16 w-48 h-48 bg-gold-100 rounded-full opacity-20 blur-2xl"></div>
