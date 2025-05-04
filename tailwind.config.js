@@ -35,7 +35,7 @@ export default {
         sans: ['Montserrat', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-pattern': "url('public/images/image-1.jpg')",
+        'hero-pattern': "url('images/image-1.jpg')",
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',

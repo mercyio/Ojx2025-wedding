@@ -10,35 +10,35 @@ const Gallery = () => {
   // Sample gallery images
   const galleryImages = [
     {
-      src: "public/images/image-1.jpg",
+      src: "images/image-1.jpg",
       alt: "Couple by the sea"
     },
     {
-      src: "public/images/image-2.jpg",
+      src: "images/image-2.jpg",
       alt: "Couple in garden"
     },
     {
-      src: "public/images/image-3.jpg",
+      src: "images/image-3.jpg",
       alt: "Couple laughing"
     },
     {
-      src: "public/images/image-4.jpg",
+      src: "images/image-4.jpg",
       alt: "Couple walking"
     },
     {
-      src: "public/images/image-5.jpg",
+      src: "images/image-5.jpg",
       alt: "Couple at sunset"
     },
     {
-      src: "public/images/image-1.jpg",
+      src: "images/image-1.jpg",
       alt: "Couple close up"
     },
     {
-      src: "public/images/image-2.jpg",
+      src: "images/image-2.jpg",
       alt: "Couple dancing"
     },
     {
-      src: "public/images/image-3.jpg",
+      src: "images/image-3.jpg",
       alt: "Bride and groom"
     },
   ];

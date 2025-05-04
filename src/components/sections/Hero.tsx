@@ -102,7 +102,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          A LOVE MADE IN HEAVEN
+         When love feels right, it flows effortlessly
         </motion.p>
         
         <motion.h1 
@@ -122,7 +122,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          May 24, 2025 • Lagos, Nigeria
+          October 29, 2025 • Ibadan, Nigeria
         </motion.div>
 
         <motion.p
@@ -131,7 +131,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          "What God has joined together, let no one put asunder."
+           "Two hearts, one rhythm. All God."
         </motion.p>
         
         <motion.div
@@ -150,7 +150,7 @@ const Hero = () => {
             href="#our-story"
             className="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white/10 transition-colors"
           >
-            Our Story
+             Peep the love story 
           </a>
         </motion.div>
         

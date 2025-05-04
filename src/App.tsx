@@ -12,6 +12,7 @@ import Footer from './components/layout/Footer';
 import Preloader from './components/ui/Preloader';
 import CountdownTimer from './components/ui/CountdownTimer';
 import VirtualInvite from './components/ui/VirtualInvite';
+import TriviaSection from './components/sections/trivia';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -51,7 +52,10 @@ function App() {
             </section>
             <section id="guestbook" className="py-20">
               <Guestbook />
-            </section>
+              </section>
+              <section id="trivia" className="py-20">
+              <TriviaSection />
+              </section>
             <section id="gifts" className="py-20 bg-gray-50 dark:bg-gray-800">
               <GiftRegistry />
             </section>

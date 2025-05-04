@@ -38,7 +38,7 @@ const VirtualInvite = ({ isOpen, onClose }: VirtualInviteProps) => {
       link.click();
     };
     
-    img.src = 'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg';
+    img.src = 'images/image-1.jpg';
   };
 
   if (!isOpen) return null;
@@ -76,7 +76,7 @@ const VirtualInvite = ({ isOpen, onClose }: VirtualInviteProps) => {
                 level="H"
                 includeMargin={true}
                 imageSettings={{
-                  src: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg",
+                  src: "images/image-1.jpg",
                   x: undefined,
                   y: undefined,
                   height: 40,

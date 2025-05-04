@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Heart, Send } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
@@ -31,6 +31,8 @@ const Guestbook = () => {
     name: '',
     message: ''
   });
+  
+  const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -53,6 +55,7 @@ const Guestbook = () => {
     
     setMessages([message, ...messages]);
     setNewMessage({ name: '', message: '' });
+    setSubmitted(true);
   };
 
   const [ref, inView] = useInView({
@@ -78,49 +81,84 @@ const Guestbook = () => {
         <div className="bg-teal-50 p-8 rounded-2xl shadow-xl mb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
           
-          <h3 className="font-serif text-2xl text-teal-800 mb-6 flex items-center">
-            <Heart className="w-6 h-6 text-gold-400 mr-2" />
-            Leave Your Message
-          </h3>
-          
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Your Name*
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={newMessage.name}
-                onChange={handleInputChange}
-                required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
-                placeholder="Enter your name"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Your Message*
-              </label>
-              <textarea
-                name="message"
-                value={newMessage.message}
-                onChange={handleInputChange}
-                required
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
-                placeholder="Share your wishes for Omolara & Joshua..."
-              />
-            </div>
-            
-            <div className="text-right">
-              <Button type="submit" variant="primary" className="hover:scale-105 transform transition-transform">
-                <Send className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
-            </div>
-          </form>
+          <AnimatePresence mode="wait">
+            {submitted ? (
+              <motion.div 
+                key="thank-you"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className="p-12 text-center relative z-10"
+              >
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
+                  className="inline-flex items-center justify-center w-24 h-24 mb-8 rounded-full bg-gradient-to-br from-teal-100 to-gold-100"
+                >
+                  <Heart className="w-12 h-12 text-teal-600 fill-current" />
+                </motion.div>
+                <h3 className="font-serif text-3xl text-teal mb-4">Thank You!</h3>
+                <p className="text-teal/90 mb-8 text-lg">
+                  Your message has been added to our guestbook. We appreciate your kind words!
+                </p>
+                <Button 
+                  onClick={() => setSubmitted(false)}
+                  variant="outline"
+                  className="hover:scale-105 transform transition-transform"
+                >
+                  Add Another Message
+                </Button>
+              </motion.div>
+            ) : (
+              <>
+                <h3 className="font-serif text-2xl text-teal-800 mb-6 flex items-center">
+                  <Heart className="w-6 h-6 text-gold-400 mr-2" />
+                  Leave Your Message
+                </h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Your Name*
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={newMessage.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Your Message*
+                    </label>
+                    <textarea
+                      name="message"
+                      value={newMessage.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
+                      placeholder="Share your wishes for Omolara & Joshua..."
+                    />
+                  </div>
+                  
+                  <div className="text-right">
+                    <Button type="submit" variant="primary" className="hover:scale-105 transform transition-transform">
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
+              </>
+            )}
+          </AnimatePresence>
         </div>
       </motion.div>
     </div>
