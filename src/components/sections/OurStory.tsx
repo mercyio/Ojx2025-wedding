@@ -211,15 +211,15 @@ const OurStory = () => {
 
         /* Mobile text sizes - reduced to half */
         .date-text {
-          font-size: 4.5px;
-        }
-        
-        .name-text {
           font-size: 5.5px;
         }
         
+        .name-text {
+          font-size: 6.5px;
+        }
+        
         .story-text {
-          font-size: 4.5px;
+          font-size: 5.5px;
           line-height: 1.3;
         }
 
