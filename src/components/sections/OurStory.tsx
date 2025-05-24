@@ -243,7 +243,7 @@ const OurStory = () => {
           
           .heart-content {
             width: 80%;
-            top: 30%;
+            top: 25%;
           }
 
           /* Desktop text sizes - reduced to half */
