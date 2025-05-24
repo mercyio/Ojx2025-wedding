@@ -41,7 +41,7 @@ const CountdownTimer = () => {
         <div className="flex gap-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
             <div key={unit} className="text-center">
-              <div className="bg-teal-50/30 dark:bg-teal-900/30 rounded-lg p-3 min-w-[60px] backdrop-blur-sm border border-teal-200/20 dark:border-teal-700/20">
+              <div className="bg-teal-55 dark:bg-teal-950 rounded-lg p-3 min-w-[60px] backdrop-blur-sm border border-teal-200/20 dark:border-teal-700/20">
                 <span className="text-2xl font-bold text-teal-600 dark:text-teal-300">
                   {value}
                 </span>
