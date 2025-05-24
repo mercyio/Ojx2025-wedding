@@ -10,8 +10,8 @@ const OurStory = () => {
       title: "First Meeting",
       dateOmolara: "April 12, 2022",
       dateJoshua: "April 12, 2022",
-      omolaraStory: "I never expected to meet someone special at a tech conference. Joshua approached me during lunch break, asking about my presentation on digital marketing.",
-      joshuaStory: "I saw the most beautiful woman giving an impressive presentation. I had to muster all my courage to approach her during lunch. I'm glad I did!",
+      omolaraStory: "I never expected to meet someone special at a conference. Joshua approached me during lunch break, asking about my presentation.",
+      joshuaStory: "I saw the most beautiful woman giving an impressive speech. I had to muster all my courage to approach her during lunch. I'm glad I did!",
       icon: <Star className="h-6 w-6" />,
       position: "left"
     },
@@ -28,7 +28,7 @@ const OurStory = () => {
       title: "Falling in Love",
       dateOmolara: "September 2022",
       dateJoshua: "August 2022",
-      omolaraStory: "It wasn't one big moment, but many small ones. How he remembered little details, how he made me laugh, how he supported me through challenges.",
+      omolaraStory: "It was one big moment. How he remembered little details, how he made me laugh, how he supported me through challenges.",
       joshuaStory: "I think I knew I loved her when she called me at 2 AM to tell me she got the project she was working on. Her passion and dedication amazed me.",
       icon: <Heart className="h-6 w-6" />,
       position: "right",
@@ -117,10 +117,10 @@ const OurStory = () => {
                     <div className="heart-container teal-heart">
                       <div className="heart-content">
                         <div className="text-center mb-2 pb-2 border-b border-teal-100">
-                          <span className="text-xs text-teal-600 font-medium block">{point.dateOmolara}</span>
-                          <h4 className="font-serif text-sm text-teal-800">Omolara</h4>
+                          <span className="date-text text-teal-600 font-medium block">{point.dateOmolara}</span>
+                          <h4 className="name-text font-serif text-teal-800">Omolara</h4>
                         </div>
-                        <p className="text-gray-700 text-xs leading-relaxed text-center">{point.omolaraStory}</p>
+                        <p className="story-text text-gray-700 leading-relaxed text-center">{point.omolaraStory}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -136,10 +136,10 @@ const OurStory = () => {
                     <div className="heart-container gold-heart">
                       <div className="heart-content">
                         <div className="text-center mb-2 pb-2 border-b border-gold-100">
-                          <span className="text-xs text-gold-600 font-medium block">{point.dateJoshua}</span>
-                          <h4 className="font-serif text-sm text-teal-800">Joshua</h4>
+                          <span className="date-text text-gold-600 font-medium block">{point.dateJoshua}</span>
+                          <h4 className="name-text font-serif text-teal-800">Joshua</h4>
                         </div>
-                        <p className="text-gray-700 text-xs leading-relaxed text-center">{point.joshuaStory}</p>
+                        <p className="story-text text-gray-700 leading-relaxed text-center">{point.joshuaStory}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -209,6 +209,20 @@ const OurStory = () => {
           padding: 10px;
         }
 
+        /* Mobile text sizes - reduced to half */
+        .date-text {
+          font-size: 4.5px;
+        }
+        
+        .name-text {
+          font-size: 5.5px;
+        }
+        
+        .story-text {
+          font-size: 4.5px;
+          line-height: 1.3;
+        }
+
         @media (min-width: 768px) {
           .heart-container {
             width: 320px;
@@ -230,6 +244,20 @@ const OurStory = () => {
           .heart-content {
             width: 80%;
             top: 30%;
+          }
+
+          /* Desktop text sizes - reduced to half */
+          .date-text {
+            font-size: 10px;
+          }
+          
+          .name-text {
+            font-size: 12px;
+          }
+          
+          .story-text {
+            font-size: 10px;
+            line-height: 1.5;
           }
         }
       `}</style>

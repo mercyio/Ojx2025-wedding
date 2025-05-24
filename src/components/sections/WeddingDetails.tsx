@@ -89,7 +89,7 @@ const WeddingDetails = () => {
        </div>
   
                   {/* Love quote with bold teal green text */}
-               <blockquote className="mt-40">
+               <blockquote className="mt-20">
               <p className="text-xl md:text-2xl font-extrabold text-teal-600 italic">
                       "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
              </p>
@@ -99,7 +99,7 @@ const WeddingDetails = () => {
 
       
       {/* Reception section moved down with added margin top */}
-      <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden mt-40"> {/* Added margin top */}
+      <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden mt-20"> {/* Added margin top */}
         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
         
         <div className="relative z-10">

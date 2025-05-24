@@ -150,7 +150,7 @@ const Hero = () => {
             href="#our-story"
             className="px-8 py-3 border-2 border-white text-white rounded-full hover:bg-white/10 transition-colors"
           >
-             Peep the love story 
+             Our story 
           </a>
         </motion.div>
         
