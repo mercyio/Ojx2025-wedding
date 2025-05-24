@@ -33,7 +33,7 @@ const CountdownTimer = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 backdrop-blur-lg bg-opacity-90 dark:bg-opacity-90"
+        className="bg-white/20 dark:bg-gray-800/20 rounded-2xl shadow-xl p-6 backdrop-blur-lg border border-white/30 dark:border-gray-700/30"
       >
         <h3 className="text-center font-serif text-sm text-teal-800 dark:text-teal-200 mb-4">
           Counting down to forever
@@ -41,7 +41,7 @@ const CountdownTimer = () => {
         <div className="flex gap-4">
           {Object.entries(timeLeft).map(([unit, value]) => (
             <div key={unit} className="text-center">
-              <div className="bg-teal-50 dark:bg-teal-900 rounded-lg p-3 min-w-[60px]">
+              <div className="bg-teal-50/30 dark:bg-teal-900/30 rounded-lg p-3 min-w-[60px] backdrop-blur-sm border border-teal-200/20 dark:border-teal-700/20">
                 <span className="text-2xl font-bold text-teal-600 dark:text-teal-300">
                   {value}
                 </span>
