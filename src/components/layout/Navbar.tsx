@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, Moon, Sun, Share2 } from 'lucide-react';
+import { Heart, Share2 } from 'lucide-react';
 
 interface NavbarProps {
   onShowInvite: () => void;
@@ -8,13 +8,6 @@ interface NavbarProps {
 const Navbar = ({ onShowInvite }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || 
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-    return false;
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,25 +22,11 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white dark:bg-gray-900 shadow-md py-2' 
+          ? 'bg-white shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
@@ -56,7 +35,7 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
           <a 
             href="#home" 
             className={`flex items-center gap-2 font-serif text-xl transition-colors ${
-              isScrolled ? 'text-teal-700 dark:text-teal-300' : 'text-white'
+              isScrolled ? 'text-teal-700' : 'text-white'
             }`}
           >
             <span>O</span>
@@ -70,27 +49,11 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
               onClick={onShowInvite}
               className={`p-2 rounded-full transition-colors ${
                 isScrolled 
-                  ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' 
+                  ? 'text-gray-700 hover:bg-gray-100' 
                   : 'text-white hover:bg-white/10'
               }`}
             >
               <Share2 className="w-5 h-5" />
-            </button>
-
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className={`p-2 rounded-full transition-colors ${
-                isScrolled 
-                  ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' 
-                  : 'text-white hover:bg-white/10'
-              }`}
-            >
-              {isDarkMode ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
             </button>
 
             {/* Desktop Menu */}
@@ -101,7 +64,7 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
                   className={`text-sm font-medium transition-colors hover:text-gold-500 ${
                     isScrolled 
-                      ? 'text-gray-700 dark:text-gray-300' 
+                      ? 'text-gray-700' 
                       : 'text-white'
                   }`}
                 >
@@ -115,7 +78,7 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden p-2 rounded-md transition-colors ${
                 isScrolled 
-                  ? 'text-gray-700 dark:text-gray-300' 
+                  ? 'text-gray-700' 
                   : 'text-white'
               }`}
             >
@@ -139,13 +102,13 @@ const Navbar = ({ onShowInvite }: NavbarProps) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
             <div className="flex flex-col space-y-3 px-4">
               {['Home', 'Our Story', 'Details', 'RSVP', 'Gallery', 'Guestbook', 'Gifts'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 text-sm font-medium py-2"
+                  className="text-gray-700 hover:text-teal-600 text-sm font-medium py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item}
