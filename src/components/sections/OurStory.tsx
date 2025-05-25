@@ -198,7 +198,7 @@ const OurStory = () => {
         .heart-content {
           position: absolute;
           width: 75%;
-          top: 35%;
+          top: 25%;
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 10;
@@ -211,15 +211,15 @@ const OurStory = () => {
 
         /* Mobile text sizes - reduced to half */
         .date-text {
-          font-size: 8.5px;
+          font-size: 12px;
         }
         
         .name-text {
-          font-size: 10.5px;
+          font-size: 12px;
         }
         
         .story-text {
-          font-size: 8.5px;
+          font-size: 10px;
           line-height: 1.3;
         }
 
