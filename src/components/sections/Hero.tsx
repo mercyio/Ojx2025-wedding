@@ -71,7 +71,7 @@ const Hero = () => {
       {/* Sticky Music Control */}
       <button 
         onClick={toggleMusic}
-        className="fixed top-24 right-6 z-50 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all shadow-lg"
+        className="fixed top-24 right-6 z-50 p-3 bg-gold-400 backdrop-blur-sm rounded-full text-teal-600 hover:bg-gold-500 transition-all shadow-lg"
       >
         {isMusicPlaying ? (
           <Volume2 className="w-6 h-6" />
@@ -99,7 +99,7 @@ const Hero = () => {
         {/* Hero Content - Moved up */}
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 -mt-16">
           <motion.p 
-            className="mb-4 text-lg md:text-xl tracking-wider font-light"
+            className="md:text-xl tracking-wider max-w-lg mx-auto text-lg italic text-gold-200 mb-12 font-serif"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -127,14 +127,14 @@ const Hero = () => {
             October 29, 2025 • Ibadan, Nigeria
           </motion.div>
 
-          <motion.p
+          {/* <motion.p
             className="max-w-lg mx-auto text-lg italic text-gold-200 mb-12 font-serif"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
              "Two hearts, one rhythm. All God."
-          </motion.p>
+          </motion.p> */}
           
           <motion.div
             className="flex gap-4 mb-16"
