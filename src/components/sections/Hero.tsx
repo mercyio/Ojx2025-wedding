@@ -70,11 +70,12 @@ const Hero = () => {
     <div className="relative h-screen overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-hero-pattern bg-cover bg-center"
-        style={{ 
-          backgroundPosition: '50% 30%'
-        }}
-      >
+  className="absolute inset-0 bg-cover bg-center"
+  style={{ 
+    backgroundImage: 'url("images/image-1.jpg")', // Replace with your actual image filename
+    backgroundPosition: '50% 30%'
+  }}
+>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         {rays}
       </div>
