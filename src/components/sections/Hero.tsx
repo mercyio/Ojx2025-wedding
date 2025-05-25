@@ -113,9 +113,9 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <span className= "text-gold-600">Omolara</span>
+            <span className= "text-teal-600">Omolara</span>
             <span className="mx-2 md:mx-4 text-gold-400">&</span>
-            <span className= "text-gold-600">Joshua</span>
+            <span className= "text-teal-600">Joshua</span>
           </motion.h1>
           
           <motion.div 
