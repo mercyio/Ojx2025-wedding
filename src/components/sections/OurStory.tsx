@@ -198,7 +198,7 @@ const OurStory = () => {
         .heart-content {
           position: absolute;
           width: 75%;
-          top: 27%;
+          top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 10;
