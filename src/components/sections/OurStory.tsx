@@ -29,7 +29,7 @@ const OurStory = () => {
       dateOmolara: "September 2022",
       dateJoshua: "August 2022",
       omolaraStory: "It was one big moment. How he remembered little details, how he made me laugh, how he supported me through challenges.",
-      joshuaStory: "I think I knew I loved her when she called me at 2 AM to tell me she got the project she was working on. Her passion and dedication amazed me.",
+      joshuaStory: "I think I knew I loved her when she called me at 2 AM to tell me she got the project she was working on.<br> Her passion and dedication amazed me.",
       icon: <Heart className="h-6 w-6" />,
       position: "right",
       topOffset: true
@@ -38,7 +38,7 @@ const OurStory = () => {
       title: "The Proposal",
       dateOmolara: "December 24, 2023",
       dateJoshua: "December 24, 2023",
-      omolaraStory: "Christmas Eve under the stars. He seemed nervous all evening, then suddenly got down on one knee. It was perfect. I couldn't stop crying!",
+      omolaraStory: "Christmas Eve under the stars. He seemed nervous all evening, then suddenly got down on one knee. <br> It was perfect. I couldn't stop crying!",
       joshuaStory: "I had the ring for months waiting for the perfect moment. When I saw her looking up at the stars that night, I knew it was time. Best 'yes' I've ever heard!",
       icon: <MapPin className="h-6 w-6" />,
       position: "center-right",

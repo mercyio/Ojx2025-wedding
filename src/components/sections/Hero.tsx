@@ -108,14 +108,14 @@ const Hero = () => {
           </motion.p>
           
           <motion.h1 
-            className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6"
+            className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6, mt-10"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <span>Omolara</span>
+            <span className= "text-gold-600">Omolara</span>
             <span className="mx-2 md:mx-4 text-gold-400">&</span>
-            <span>Joshua</span>
+            <span className= "text-gold-600">Joshua</span>
           </motion.h1>
           
           <motion.div 
