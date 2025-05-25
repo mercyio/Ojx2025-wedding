@@ -29,7 +29,7 @@ const OurStory = () => {
       dateOmolara: "September 2022",
       dateJoshua: "August 2022",
       omolaraStory: "It was one big moment. How he remembered little details, how he made me laugh, how he supported me through challenges.",
-      joshuaStory: "I think I knew I loved her when she called me at 2 AM to tell me she got the project she was working on.      Her passion and dedication amazed me.",
+      joshuaStory: "I knew I loved her when she called me at 2am to tell me she got the project she was working on.      Her passion and dedication amazed me.",
       icon: <Heart className="h-6 w-6" />,
       position: "right",
       topOffset: true
