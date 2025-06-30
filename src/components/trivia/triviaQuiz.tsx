@@ -34,12 +34,12 @@ const TriviaGame: React.FC<TriviaGameProps> = ({
         id: 1,
         question: "Where did the couple first meet?",
         options: ["College", "Work", "Through friends", "Dating app"],
-        correctAnswer: "College"
+        correctAnswer: "Work"
       },
       {
         id: 2,
         question: "What year did they get engaged?",
-        options: ["2020", "2021", "2022", "2023"],
+        options: ["2022", "2023", "2024", "2025"],
         correctAnswer: "2022"
       },
       {
@@ -51,14 +51,14 @@ const TriviaGame: React.FC<TriviaGameProps> = ({
       {
         id: 4,
         question: "What is their first pet's name?",
-        options: ["Max", "Bella", "Charlie", "Luna"],
-        correctAnswer: "Luna"
+        options: ["Lorlor", "Bella", "Charlie", "Luna"],
+        correctAnswer: "Lorlor"
       },
       {
         id: 5,
         question: "What food do they both love?",
         options: ["Pizza", "Sushi", "Tacos", "Pasta"],
-        correctAnswer: "Sushi"
+        correctAnswer: "Pasta"
       }
     ];
     
