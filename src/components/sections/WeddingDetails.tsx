@@ -16,14 +16,14 @@ const WeddingDetails = () => {
     {
       title: "Ceremony Time",
       icon: <Clock className="h-8 w-8 text-gold-500" />,
-      description: "2:00 PM",
+      description: "11:00 AM",
       extra: "Come early, grab a seat, and enjoy the celebration"
     },
     {
       title: "Venue",
       icon: <MapPin className="h-8 w-8 text-gold-500" />,
-      description: "The Grandeur Place",
-      extra: "The Grandeur Place, Ibadan, Oyo State"
+      description: "Havana Royale Hall",
+      extra: "Havana Royale Hall, Ibadan, Oyo State, Nigeria"
     },
     {
       title: "Slay Code",
@@ -104,29 +104,46 @@ const WeddingDetails = () => {
         
         <div className="relative z-10">
           <h3 className="font-serif text-3xl text-teal-800 mb-6 text-center">Reception</h3>
-          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for dinner, dancing, and celebration at the same venue starting at 12:00 PM.</p>
+          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for dinner, dancing, and celebration at the same venue starting at 11:00 AM.</p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button variant="primary" className="group">
-              <Plus className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform" />
-              Add to Google Calendar
-            </Button>
-            <Button variant="outline" className="group">
-              <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Add to Apple Calendar
-            </Button>
-          </div>
+<div className="flex flex-wrap justify-center gap-4 mb-12">
+  <a
+    href="https://calendar.app.google/7EiM5fsV8DUoZdvR9"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="primary" className="group">
+      <Plus className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform" />
+      Add to Google Calendar
+    </Button>
+  </a>
+
+  <a
+    href="https://calendar.app.google/7EiM5fsV8DUoZdvR9"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="outline" className="group">
+      <Calendar className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+      Add to Apple Calendar
+    </Button>
+  </a>
+</div>
+
+
           
           <div className="rounded-2xl overflow-hidden h-64 md:h-96 shadow-lg">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15885.330847781693!2d3.8889711!3d7.377535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ecb7f22c24df%3A0x3fd975cda4f61a2!2sIbadan%2C%20Oyo!5e0!3m2!1sen!2sng!4v1714754901341!5m2!1sen!2sng"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    title="Wedding Venue - Ibadan"
-  ></iframe>
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.5186221229994!2d3.904321!3d7.439682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039ed5f78469435%3A0xbb087ea961e15fc1!2sHavana%20Royale%20Hall!5e0!3m2!1sen!2sng!4v1719837711870!5m2!1sen!2sng"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  title="Wedding Venue - Havana Royale Hall"
+/>
+
+
+
     </div>
 
         </div>

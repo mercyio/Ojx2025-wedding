@@ -24,13 +24,13 @@ const GiftRegistry = () => {
     <div className="container mx-auto px-4 md:px-6">
       <SectionTitle 
         title="Gift Registry" 
-        subtitle="Your presence is our present, but if you wish to give a gift"
+        // subtitle="Your presence is our present, but if you wish to give a gift"
       />
 
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <p className="italic text-gold-700 font-serif text-lg">
-            "We appreciate your love more than any gift"
+            "Your presence is our present, but if you wish to give a gift"
           </p>
         </div>
 
@@ -69,9 +69,9 @@ const GiftRegistry = () => {
                     <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
                       <p className="text-gray-700 font-medium mb-2 text-sm">Account Name</p>
                       <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold">Omolara & Joshua</p>
+                        <p className="text-teal-800 font-semibold">Vincent Joshua O.</p>
                         <button 
-                          onClick={() => handleCopyAccount("Omolara & Joshua", "name")}
+                          onClick={() => handleCopyAccount("Vincent Joshua O.", "name")}
                           className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
                           aria-label="Copy account name"
                         >
@@ -86,9 +86,9 @@ const GiftRegistry = () => {
                     <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
                       <p className="text-gray-700 font-medium mb-2 text-sm">Bank Name</p>
                       <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold">First Bank of Nigeria</p>
+                        <p className="text-teal-800 font-semibold">Access Bank of Nigeria</p>
                         <button 
-                          onClick={() => handleCopyAccount("First Bank of Nigeria", "bank")}
+                          onClick={() => handleCopyAccount("Access Bank of Nigeria", "bank")}
                           className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
                           aria-label="Copy bank name"
                         >
@@ -103,9 +103,9 @@ const GiftRegistry = () => {
                     <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
                       <p className="text-gray-700 font-medium mb-2 text-sm">Account Number</p>
                       <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold tracking-wider">1234567890</p>
+                        <p className="text-teal-800 font-semibold tracking-wider">0695285216</p>
                         <button 
-                          onClick={() => handleCopyAccount("1234567890", "number")}
+                          onClick={() => handleCopyAccount("0695285216", "number")}
                           className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
                           aria-label="Copy account number"
                         >
