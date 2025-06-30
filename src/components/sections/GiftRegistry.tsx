@@ -21,20 +21,20 @@ const GiftRegistry = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-6">
+    <div className="container mx-auto px-4 md:px-6 ">
       <SectionTitle 
         title="Gift Registry" 
         // subtitle="Your presence is our present, but if you wish to give a gift"
       />
 
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 ">
           <p className="italic text-gold-700 font-serif text-lg">
             "Your presence is our present, but if you wish to give a gift"
           </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
@@ -139,8 +139,9 @@ const GiftRegistry = () => {
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
+                  
                 >
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-4 ">
                     <CreditCard className="h-12 w-12 text-teal-500" />
                   </div>
                   <h3 className="font-serif text-2xl text-teal-800 mb-3">Cash Gift</h3>

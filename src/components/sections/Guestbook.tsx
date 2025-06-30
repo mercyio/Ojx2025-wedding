@@ -78,7 +78,7 @@ const Guestbook = () => {
         className="max-w-4xl mx-auto"
       >
         {/* Message Form */}
-        <div className="bg-teal-50 p-8 rounded-2xl shadow-xl mb-12 relative overflow-hidden">
+        <div className="bg-gold-200 p-8 rounded-2xl shadow-xl mb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
           
           <AnimatePresence mode="wait">

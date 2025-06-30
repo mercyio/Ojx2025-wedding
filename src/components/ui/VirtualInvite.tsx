@@ -38,7 +38,7 @@ const VirtualInvite = ({ isOpen, onClose }: VirtualInviteProps) => {
       link.click();
     };
     
-    img.src = 'images/image-1.jpg';
+    img.src = 'images/ink.png';
   };
 
   if (!isOpen) return null;
@@ -76,7 +76,7 @@ const VirtualInvite = ({ isOpen, onClose }: VirtualInviteProps) => {
                 level="H"
                 includeMargin={true}
                 imageSettings={{
-                  src: "images/image-1.jpg",
+                  src: "images/ink.png",
                   x: undefined,
                   y: undefined,
                   height: 40,
@@ -128,7 +128,7 @@ const VirtualInvite = ({ isOpen, onClose }: VirtualInviteProps) => {
           </div>
 
           <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-            Scan this QR code to visit our wedding website
+            Scan this QR code to view our wedding invitation card
           </p>
         </div>
       </div>

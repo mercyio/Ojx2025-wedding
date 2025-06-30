@@ -56,7 +56,7 @@ const WeddingDetails = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-gradient-to-br from-white to-teal-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden border border-teal-100/50">
+              <div className="bg-gradient-to-br from-white to-teal-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden border border-teal-200/100">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold-200 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-20 group-hover:scale-150 transition-transform duration-500"></div>
                 
                 <div className="flex items-start gap-6 relative z-10">
@@ -90,7 +90,7 @@ const WeddingDetails = () => {
   
                   {/* Love quote with bold teal green text */}
                <blockquote className="mt-20">
-              <p className="text-xl md:text-2xl font-extrabold text-teal-600 italic">
+              <p className="text-xl md:text-2xl font-extrabold text-gold-600 italic">
                       "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
              </p>
                 <footer className="mt-2 text-gray-600">— Maya Angelou</footer>
@@ -102,7 +102,7 @@ const WeddingDetails = () => {
       <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl relative overflow-hidden mt-20"> {/* Added margin top */}
         <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
         
-        <div className="relative z-10">
+        <div className="relative z-10 text-teal-100">
           <h3 className="font-serif text-3xl text-teal-800 mb-6 text-center">Reception</h3>
           <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for dinner, dancing, and celebration at the same venue starting at 11:00 AM.</p>
           
