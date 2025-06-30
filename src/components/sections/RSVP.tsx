@@ -328,15 +328,20 @@ const RSVP = () => {
                   transition={{ delay: 0.5 }}
                   className="text-center max-w-2xl mx-auto mt-10"
                 >
-                  <p className="text-teal/90 mb-8 mt-20 text-lg">
+                  <p className="text-teal/90 mb-8 text-sm">
                     We're so excited to celebrate our special day with you. If you have any questions, please don't hesitate to contact us.
                   </p>
-                  <div className="flex justify-center items-center flex-wrap gap-6">
-                    <Button variant="secondary" className="group shadow-md hover:shadow-lg px-8 py-3 text-lg text-white border border-white">
-                      <Phone className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                      Contact Us
-                    </Button>
-                  </div>
+                  <div className="flex justify-center items-center flex-wrap gap-4">
+    <Button variant="secondary" className="group shadow-md hover:shadow-lg px-6 py-3 text-sm sm:text-base text-white border border-white">
+      <Phone className="w-3 h-3 mr-2 group-hover:rotate-12 transition-transform" />
+      David — 09064545767
+    </Button>
+    
+    <Button variant="secondary" className="group shadow-md hover:shadow-lg px-6 py-3 text-sm sm:text-base text-white border border-white">
+      <Phone className="w-3 h-3 mr-2 group-hover:rotate-12 transition-transform" />
+      Mercy — 09064545767
+    </Button>
+  </div>
                 </motion.div>
               </form>
             )}

@@ -4,7 +4,7 @@ import TriviaGame from '../trivia/triviaQuiz';
 
 const TriviaSection: React.FC = () => {
   return (
-    <section id="trivia" className="py-16 bg-teal-100">
+    <section id="trivia" className="pt-0 pb-16 bg-teal-50">
       <div className="container mx-auto px-4">
         <TriviaGame
           title={
