@@ -93,7 +93,7 @@ const WeddingDetails = () => {
               <p className="text-xl md:text-2xl font-extrabold text-gold-600 italic">
                       "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
              </p>
-                {/* <footer className="mt-2 text-gray-600">— Maya Angelou</footer> */}
+                <footer className="mt-2 text-gray-600">— Couples</footer>
                </blockquote>
             </div>
 
