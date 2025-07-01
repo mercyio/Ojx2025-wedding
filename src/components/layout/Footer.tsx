@@ -14,8 +14,8 @@ const Footer = () => {
               <Heart className="h-3 w-3 md:h-5 md:w-5 fill-gold-400 stroke-gold-400 animate-pulse" />
               <span className="font-serif text-xl md:text-3xl text-gold-300">Joshua</span>
             </div>
-            <p className="text-teal-100 mb-1 text-sm md:text-base">Saturday, October 24, 2025</p>
-            <p className="text-teal-200 text-sm md:text-base">The Grandeur Place, Ibadan, Oyo State</p>
+            <p className="text-teal-100 mb-1 text-sm md:text-base">Wednesday, October 29, 2025</p>
+            <p className="text-teal-200 text-sm md:text-base">Havana Royale Halls, Oyo State, Nigeria</p>
           </div>
 
           {/* Navigation Links */}
@@ -64,7 +64,7 @@ const Footer = () => {
               href="https://mercyio-portfolio.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gold-300 hover:underline ml-1"
+              className="text-gold-300 underline hover:underline ml-1"
             >
               mercyio
             </a>

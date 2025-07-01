@@ -85,7 +85,7 @@ const Hero = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url("images/image-1.jpg")', 
+            backgroundImage: 'url("images/image-9.jpg")', 
             backgroundPosition: '50% 30%'
           }}
         >
@@ -98,14 +98,14 @@ const Hero = () => {
         
         {/* Hero Content - Moved up */}
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 -mt-16">
-          <motion.p 
+          {/* <motion.p 
             className="mb-4 text-sm md:text-x1 lg:text-xl tracking-wider font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
            When love feels right, it flows effortlessly
-          </motion.p>
+          </motion.p> */}
           
           <motion.h1 
             className="font-serif text-5xl md:text-8xl lg:text-10xl mb-6, mt-40"
@@ -133,7 +133,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-             "Two hearts, one rhythm. All God."
+             "When love feels right, it flows effortlessly"
           </motion.p>
           
           <motion.div
