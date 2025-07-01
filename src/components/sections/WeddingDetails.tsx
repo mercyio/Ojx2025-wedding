@@ -28,7 +28,7 @@ const WeddingDetails = () => {
     {
       title: "Slay Code",
       icon: <Gift className="h-8 w-8 text-gold-500" />,
-      description: "Sage Green + Gold Glow",
+      description: "Sage Green + Champagne Gold",
       extra: "Come through in style. We wanna see you shine!"
     }
   ];
