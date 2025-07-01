@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Send, Users, Calendar, Music, MessageCircle, Gift, Phone } from 'lucide-react';
+import { Heart, Send, Phone } from 'lucide-react';
 import toast from 'react-hot-toast';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
@@ -14,62 +14,70 @@ const RSVP = () => {
     attending: 'yes',
     guests: '0',
     songRequest: '',
-    dietaryRestrictions: '',
     message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [formStep, setFormStep] = useState(0);
-
-  // Dummy RSVP count with base of 32
-  const [rsvpCount, setRsvpCount] = useState(32);
+  const [rsvpCount, setRsvpCount] = useState(32); // Dummy base
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const nextStep = () => {
-    setFormStep((prev) => prev + 1);
-  };
+  const nextStep = () => setFormStep((prev) => prev + 1);
+  const prevStep = () => setFormStep((prev) => prev - 1);
 
-  const prevStep = () => {
-    setFormStep((prev) => prev - 1);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    setTimeout(() => {
-      setSubmitted(true);
-
-      // Increment RSVP count (1 for self + guest number if attending)
-      if (formData.attending === 'yes') {
-        const guestTotal = 1 + parseInt(formData.guests);
-        setRsvpCount((prev) => prev + guestTotal);
-      }
-
-      toast.success('Your RSVP has been submitted!', {
-        icon: '💌',
-        style: {
-          borderRadius: '10px',
-          background: '#fff',
-          color: '#333',
-        },
+  
+    try {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxSUMfuZWZW2P9f3pxvfSQ0v_tWs2OLxcGrsggGEm5wbuRocoRcJtG8CBqZpS8G4Yfn0w/exec';
+  
+      const form = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        form.append(key, value);
       });
-    }, 1000);
+  
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: form,
+      });
+  
+      const text = await response.text();
+  
+      if (text === 'Success') {
+        setSubmitted(true);
+  
+        if (formData.attending === 'yes') {
+          const guestTotal = 1 + parseInt(formData.guests);
+          setRsvpCount((prev) => prev + guestTotal);
+        }
+  
+        toast.success('Your RSVP has been submitted!', {
+          icon: '💌',
+          style: {
+            borderRadius: '10px',
+            background: '#fff',
+            color: '#333',
+          },
+        });
+      } else {
+        toast.error('Something went wrong. Try again later.');
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error('Submission failed. Please check your internet or try again later.');
+    }
   };
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  // Animation variants
   const formVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 50 }
+    exit: { opacity: 0, x: 50 },
   };
 
   return (
@@ -87,7 +95,6 @@ const RSVP = () => {
         className="max-w-4xl mx-auto"
       >
         <div className="relative rounded-2xl shadow-xl overflow-hidden border border-gold-300 bg-teal-100">
-          {/* Decorative gradient borders */}
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gold-400 via-white to-gold-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
           <div className="absolute -left-16 -top-16 w-48 h-48 bg-gold-100 rounded-full opacity-20 blur-2xl"></div>
           <div className="absolute -right-16 -bottom-16 w-48 h-48 bg-teal-100 rounded-full opacity-20 blur-2xl"></div>
@@ -137,44 +144,33 @@ const RSVP = () => {
                       className="space-y-6"
                     >
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Full Name*
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Full Name*</label>
                         <input
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                           placeholder="Your name"
                         />
                       </div>
 
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Email Address*
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Email Address*</label>
                         <input
                           type="email"
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                           placeholder="your@email.com"
                         />
                       </div>
 
                       <div className="flex justify-end mt-6">
-                        <Button 
-                          type="button"
-                          onClick={nextStep}
-                          variant="primary"
-                          className="px-6 py-2 hover:scale-105 transform transition-transform"
-                        >
-                          Next
-                        </Button>
+                        <Button type="button" onClick={nextStep} variant="primary">Next</Button>
                       </div>
                     </motion.div>
                   )}
@@ -190,15 +186,13 @@ const RSVP = () => {
                       className="space-y-6"
                     >
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Will you attend?*
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Will you attend?*</label>
                         <select
                           name="attending"
                           value={formData.attending}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                         >
                           <option value="yes">Yes, I will attend</option>
                           <option value="no">No, I cannot attend</option>
@@ -206,15 +200,13 @@ const RSVP = () => {
                       </div>
 
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Number of Guests
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Number of Guests</label>
                         <select
                           name="guests"
                           value={formData.guests}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                           disabled={formData.attending === 'no'}
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                         >
                           <option value="0">Just me</option>
                           <option value="1">Me + 1 guest</option>
@@ -223,22 +215,8 @@ const RSVP = () => {
                       </div>
 
                       <div className="flex justify-between mt-6">
-                        <Button 
-                          type="button"
-                          onClick={prevStep}
-                          variant="outline"
-                          className="px-6 py-2 hover:scale-105 transform transition-transform"
-                        >
-                          Back
-                        </Button>
-                        <Button 
-                          type="button"
-                          onClick={nextStep}
-                          variant="primary"
-                          className="px-6 py-2 hover:scale-105 transform transition-transform"
-                        >
-                          Next
-                        </Button>
+                        <Button type="button" onClick={prevStep} variant="outline">Back</Button>
+                        <Button type="button" onClick={nextStep} variant="primary">Next</Button>
                       </div>
                     </motion.div>
                   )}
@@ -254,46 +232,31 @@ const RSVP = () => {
                       className="space-y-6"
                     >
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Song Request
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Song Request</label>
                         <input
                           type="text"
                           name="songRequest"
                           value={formData.songRequest}
                           onChange={handleChange}
                           placeholder="What song would make you dance?"
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
                         />
                       </div>
 
                       <div className="group">
-                        <label className="flex items-center text-sm font-medium text-teal mb-2">
-                          Message for the Couple
-                        </label>
+                        <label className="text-sm font-medium text-teal mb-2">Message for the Couple</label>
                         <textarea
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="Share your wishes or any additional information"
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black backdrop-blur-sm border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm h-24"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm h-24"
                         />
                       </div>
 
                       <div className="flex justify-between mt-6">
-                        <Button 
-                          type="button"
-                          onClick={prevStep}
-                          variant="outline"
-                          className="px-6 py-2 hover:scale-105 transform transition-transform"
-                        >
-                          Back
-                        </Button>
-                        <Button 
-                          type="submit"
-                          variant="primary"
-                          className="px-8 py-3 text-lg hover:scale-105 transform transition-transform bg-gradient-to-r from-gold-400 to-white-400 text-white"
-                        >
+                        <Button type="button" onClick={prevStep} variant="outline">Back</Button>
+                        <Button type="submit" variant="primary" className="bg-gradient-to-r from-gold-400 to-white-400 text-white">
                           <Send className="w-5 h-5 mr-2" />
                           Send RSVP
                         </Button>
@@ -302,26 +265,19 @@ const RSVP = () => {
                   )}
                 </AnimatePresence>
 
-                {/* Progress indicator */}
                 <div className="flex justify-center mt-8">
                   <div className="flex space-x-2">
                     {[0, 1, 2].map((step) => (
                       <motion.div
                         key={step}
-                        className={`h-2 rounded-full ${
-                          step === formStep ? 'w-8 bg-gold-400' : 'w-2 bg-white/50'
-                        }`}
-                        animate={{
-                          width: step === formStep ? 32 : 8,
-                          backgroundColor: step === formStep ? '#f0c040' : 'rgba(255, 255, 255, 0.5)'
-                        }}
+                        className={`h-2 rounded-full ${step === formStep ? 'w-8 bg-gold-400' : 'w-2 bg-white/50'}`}
+                        animate={{ width: step === formStep ? 32 : 8 }}
                         transition={{ duration: 0.3 }}
                       />
                     ))}
                   </div>
                 </div>
 
-                {/* Contact section */}
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -332,16 +288,15 @@ const RSVP = () => {
                     We're so excited to celebrate our special day with you. If you have any questions, please don't hesitate to contact us.
                   </p>
                   <div className="flex justify-center items-center flex-wrap gap-4">
-    <Button variant="secondary" className="group shadow-md hover:shadow-lg px-6 py-3 text-sm sm:text-base text-white border border-white">
-      <Phone className="w-3 h-3 mr-2 group-hover:rotate-12 transition-transform" />
-      David — 09154900655
-    </Button>
-    
-    <Button variant="secondary" className="group shadow-md hover:shadow-lg px-6 py-3 text-sm sm:text-base text-white border border-white">
-      <Phone className="w-3 h-3 mr-2 group-hover:rotate-12 transition-transform" />
-      Mercy — 09064545767
-    </Button>
-  </div>
+                    <Button variant="secondary" className="text-white border border-white">
+                      <Phone className="w-3 h-3 mr-2" />
+                      David — 09154900655
+                    </Button>
+                    <Button variant="secondary" className="text-white border border-white">
+                      <Phone className="w-3 h-3 mr-2" />
+                      Mercy — 09064545767
+                    </Button>
+                  </div>
                 </motion.div>
               </form>
             )}
