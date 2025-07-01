@@ -104,7 +104,7 @@ const WeddingDetails = () => {
         
         <div className="relative z-10 text-teal-100">
           <h3 className="font-serif text-3xl text-teal-800 mb-6 text-center">Reception</h3>
-          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for dinner, dancing, and celebration at the same venue starting at 11:00 AM.</p>
+          <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto text-lg">Following the ceremony, please join us for lunch, dancing, and celebration at the same venue starting at 12:00 PM.</p>
           
 <div className="flex flex-wrap justify-center gap-4 mb-12">
   <a
