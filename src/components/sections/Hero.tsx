@@ -97,7 +97,7 @@ const Hero = () => {
         {flowers} */}
         
         {/* Hero Content - Moved up */}
-        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 mt-16">
+        <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 mt-8">
           <motion.p 
             className="mb-4 text-sm md:text-x1 lg:text-xl tracking-wider font-light"
             initial={{ opacity: 0, y: 20 }}
