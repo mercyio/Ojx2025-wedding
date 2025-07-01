@@ -39,26 +39,66 @@ const Guestbook = () => {
     setNewMessage(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
     
-    if (newMessage.name.trim() === '' || newMessage.message.trim() === '') {
+  //   if (newMessage.name.trim() === '' || newMessage.message.trim() === '') {
+  //     return;
+  //   }
+    
+  //   const message = {
+  //     id: messages.length + 1,
+  //     name: newMessage.name,
+  //     message: newMessage.message,
+  //     date: "Just now"
+  //   };
+    
+  //   setMessages([message, ...messages]);
+  //   setNewMessage({ name: '', message: '' });
+  //   setSubmitted(true);
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+       if (newMessage.name.trim() === '' || newMessage.message.trim() === '') {
       return;
     }
-    
-    const message = {
-      id: messages.length + 1,
-      name: newMessage.name,
-      message: newMessage.message,
-      date: "Just now"
-    };
-    
-    setMessages([message, ...messages]);
-    setNewMessage({ name: '', message: '' });
-    setSubmitted(true);
+  
+    try {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwfz4ggsUWAOGtOW97NQ-YcEg7Yg05R6najn1TuMsIkvk4O9OpyXqQLBQacBK-KUunqew/exec';
+  
+      const form = new FormData();
+      Object.entries(newMessage).forEach(([key, value]) => {
+        form.append(key, value);
+      });
+  
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: form,
+      });
+  
+      const result = await response.text();
+  
+      if (result === 'Success') {
+        const message = {
+          id: messages.length + 1,
+          name: newMessage.name,
+          message: newMessage.message,
+          date: 'Just now',
+        };
+        setMessages([message, ...messages]);
+        setNewMessage({ name: '', message: '' });
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Try again later.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Submission failed. Please check your internet or try again later.');
+    }
   };
-
-  const [ref, inView] = useInView({
+    const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
