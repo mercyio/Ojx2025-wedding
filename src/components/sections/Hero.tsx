@@ -99,7 +99,7 @@ const Hero = () => {
         {/* Hero Content - Moved up */}
         <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 -mt-16">
           <motion.p 
-            className="mb-4 text-lg md:text-xl tracking-wider font-light "
+            className="mb-4 text-sm md:text-lg lg:text-xl tracking-wider font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -108,7 +108,7 @@ const Hero = () => {
           </motion.p>
           
           <motion.h1 
-            className="font-serif text-5xl md:text-7xl lg:text-8xl mb-6, mt-10"
+            className="font-serif text-4xl md:text-5xl lg:text-7xl mb-6, mt-10"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -119,7 +119,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.div 
-            className="text-xl md:text-2xl mb-8 font-light"
+            className="text-sm md:text-xl lg:text-2xl mb-8 font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -128,7 +128,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.p
-            className="max-w-lg mx-auto text-lg italic text-gold-200 mb-12 font-serif"
+            className="max-w-lg mx-auto text-sm md:text-lg italic text-gold-200 mb-12 font-serif"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}

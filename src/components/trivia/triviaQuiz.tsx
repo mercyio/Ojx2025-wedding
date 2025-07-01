@@ -40,7 +40,7 @@ const TriviaGame: React.FC<TriviaGameProps> = ({
         id: 2,
         question: "What year did they get engaged?",
         options: ["2022", "2023", "2024", "2025"],
-        correctAnswer: "2022"
+        correctAnswer: "2025"
       },
       {
         id: 3,
