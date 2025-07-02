@@ -10,35 +10,51 @@ const Gallery = () => {
   // Sample gallery images
   const galleryImages = [
     {
-      src: "images/image-1.jpg",
+      src: "images/pre-wed-12.jpg",
       alt: "Couple by the sea"
     },
     {
-      src: "images/image-2.jpg",
-      alt: "Couple in garden"
-    },
-    {
-      src: "images/image-3.jpg",
-      alt: "Couple laughing"
-    },
-    {
-      src: "images/image-4.jpg",
+      src: "images/pre-wed-2.jpg",
       alt: "Couple walking"
     },
     {
-      src: "images/image-5.jpg",
-      alt: "Couple at sunset"
-    },
-    {
-      src: "images/image-1.jpg",
-      alt: "Couple close up"
-    },
-    {
-      src: "images/image-2.jpg",
+      src: "images/pre-wed-13.jpg",
       alt: "Couple dancing"
     },
     {
+      src: "images/pre-wed-11.jpg",
+      alt: "Couple at Sunset"
+    },
+    {
       src: "images/image-3.jpg",
+      alt: "Groom"
+    },
+    {
+      src: "images/pre-wed-8.jpg",
+      alt: "Bride and groom"
+    },
+    {
+      src: "images/image-4.jpg",
+      alt: "Couple Laughing"
+    },
+    {
+      src: "images/pre-wed-10.jpg",
+      alt: "Couple close up"
+    },
+    {
+      src: "images/image-5.jpg",
+      alt: "Bride"
+    },
+    {
+      src: "images/pre-wed-4.jpg",
+      alt: "Groom"
+    },
+    {
+      src: "images/pre-wed-5.jpg",
+      alt: "Bride and groom"
+    },
+    {
+      src: "images/pre-wed-6.jpg",
       alt: "Bride and groom"
     },
   ];
