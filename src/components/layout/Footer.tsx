@@ -64,7 +64,7 @@ const Footer = () => {
               href="https://mercyio-portfolio.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gold-300 underline hover:underline ml-1"
+              className="text-gold-300 hover:underline ml-1 font-bold"
             >
               mercyio
             </a>
