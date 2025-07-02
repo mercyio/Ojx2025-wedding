@@ -151,7 +151,7 @@ const RSVP = () => {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm text-xs"
                           placeholder="Your name"
                         />
                       </div>
@@ -164,7 +164,7 @@ const RSVP = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm text-xs"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -239,7 +239,7 @@ const RSVP = () => {
                           value={formData.songRequest}
                           onChange={handleChange}
                           placeholder="What song would make you dance?"
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm text-xs"
                         />
                       </div>
 
@@ -250,7 +250,7 @@ const RSVP = () => {
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="Share your wishes or any additional information"
-                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm h-24"
+                          className="w-full px-4 py-3 rounded-lg bg-white/80 text-black border border-teal-200 focus:ring-2 focus:ring-gold-400 transition-all shadow-sm h-24 text-xs"
                         />
                       </div>
 

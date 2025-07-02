@@ -170,7 +170,7 @@ const Guestbook = () => {
                         value={newMessage.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow text-xs"
                         placeholder="Enter your name"
                       />
                     </div>
@@ -185,7 +185,7 @@ const Guestbook = () => {
                         onChange={handleInputChange}
                         required
                         rows={4}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-shadow text-xs"
                         placeholder="Share your wishes for Omolara & Joshua..."
                       />
                     </div>
