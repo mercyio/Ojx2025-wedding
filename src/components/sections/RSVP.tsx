@@ -294,7 +294,7 @@ const RSVP = () => {
                     </Button>
                     <Button variant="secondary" className="text-white border border-white">
                       <Phone className="w-3 h-3 mr-2" />
-                      Mercy — 09064545767
+                      Mercy — 09064545765
                     </Button>
                   </div>
                 </motion.div>
