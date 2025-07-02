@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="flex flex-col items-center text-xs md:text-sm text-teal-300 text-center">
           <p>© 2025 Omolara & Joshua Wedding. All rights reserved.</p>
           <p className="mt-1 md:mt-2 flex items-center justify-center">
-            Built with <Heart className="h-3 w-3 mx-1 fill-red-400 stroke-red-400" /> by 
+            Built with  <Heart className="h-3 w-3 md:h-5 md:w-5 fill-gold-400 stroke-gold-400 animate-pulse" /> by 
             <a 
               href="https://mercyio-portfolio.vercel.app" 
               target="_blank" 
