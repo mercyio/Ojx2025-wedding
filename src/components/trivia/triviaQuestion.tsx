@@ -20,7 +20,7 @@ const TriviaQuestion: React.FC<TriviaQuestionProps> = ({
 }) => {
   return (
     <div className="mb-6">
-      <h3 className="text-xl font-serif font-bold mb-4">{question.question}</h3>
+      <h3 className="text-sm font-serif font-bold mb-4">{question.question}</h3>
       
       <div className="space-y-3">
         {question.options.map((option) => (
