@@ -119,7 +119,7 @@ const RSVP = () => {
                   <Heart className="w-12 h-12 text-teal-600 fill-current" />
                 </motion.div>
                 <h3 className="font-serif text-3xl text-teal mb-4">Thank You!</h3>
-                <p className="text-teal/90 mb-8 text-lg">
+                <p className="text-teal/90 mb-8 text-sm">
                   We're {formData.attending === 'yes' ? 'excited to celebrate with you' : 'sorry you can\'t make it'}!
                 </p>
                 <Button 

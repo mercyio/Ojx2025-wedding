@@ -141,7 +141,7 @@ const Guestbook = () => {
                     <Heart className="w-12 h-12 text-teal-600 fill-current" />
                   </motion.div>
                   <h3 className="font-serif text-3xl text-teal mb-4">Thank You!</h3>
-                  <p className="text-teal/90 mb-8 text-lg">
+                  <p className="text-teal/90 mb-8 text-sm">
                     Your message has been added to our guestbook. We appreciate your kind words!
                   </p>
                   <Button 
