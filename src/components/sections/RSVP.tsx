@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Send, Phone } from 'lucide-react';
+import { Heart, Send, Phone, Check, Copy } from 'lucide-react';
 import toast from 'react-hot-toast';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
@@ -80,6 +80,32 @@ const RSVP = () => {
     exit: { opacity: 0, x: 50 },
   };
 
+  const [copiedNumber, setCopiedNumber] = useState<string | null>(null);
+
+// Add this function
+const copyToClipboard = async (number: string) => {
+  try {
+    await navigator.clipboard.writeText(number);
+    setCopiedNumber(number);
+    toast.success('Phone number copied!', {
+      icon: '📋',
+      style: {
+        borderRadius: '10px',
+        background: '#fff',
+        color: '#333',
+      },
+    });
+    
+    // Reset the copied state after 2 seconds
+    setTimeout(() => {
+      setCopiedNumber(null);
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+    toast.error('Failed to copy number');
+  }
+};
+  
   return (
     <div className="container mx-auto px-4 md:px-6">
       <SectionTitle 
@@ -288,14 +314,38 @@ const RSVP = () => {
                     We're so excited to celebrate our special day with you. If you have any questions, please don't hesitate to contact us.
                   </p>
                   <div className="flex justify-center items-center flex-wrap gap-4">
-                    <Button variant="secondary" className="text-white border border-white">
-                      <Phone className="w-3 h-3 mr-2" />
-                      David — 09154900655
-                    </Button>
-                    <Button variant="secondary" className="text-white border border-white">
-                      <Phone className="w-3 h-3 mr-2" />
-                      Mercy — 09064545765
-                    </Button>
+                  <Button variant="secondary" className="text-white border border-white relative">
+    <Phone className="w-3 h-3 mr-2" />
+    David — 09154900655
+    <button
+      type="button"
+      onClick={() => copyToClipboard('09154900655')}
+      className="ml-2 p-1 hover:bg-white/20 rounded transition-colors"
+      title="Copy phone number"
+    >
+      {copiedNumber === '09154900655' ? (
+        <Check className="w-3 h-3 text-green-400" />
+      ) : (
+        <Copy className="w-3 h-3 text-white" />
+      )}
+    </button>
+  </Button>
+  <Button variant="secondary" className="text-white border border-white relative">
+    <Phone className="w-3 h-3 mr-2" />
+    Mercy — 09064545765
+    <button
+      type="button"
+      onClick={() => copyToClipboard('09064545765')}
+      className="ml-2 p-1 hover:bg-white/20 rounded transition-colors"
+      title="Copy phone number"
+    >
+      {copiedNumber === '09064545765' ? (
+        <Check className="w-3 h-3 text-green-400" />
+      ) : (
+        <Copy className="w-3 h-3 text-white" />
+      )}
+    </button>
+  </Button>
                   </div>
                 </motion.div>
               </form>
