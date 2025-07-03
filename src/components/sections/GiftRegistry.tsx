@@ -37,7 +37,7 @@ const GiftRegistry = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center max-w-md w-full h-[420px] flex flex-col justify-between"
+            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center max-w-md w-full h-[430px] flex flex-col justify-between"
           >
             <AnimatePresence mode="wait">
               {showDetails ? (
