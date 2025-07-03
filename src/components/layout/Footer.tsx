@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="font-serif text-xl md:text-3xl text-gold-300">Joshua</span>
             </div>
             <p className="text-teal-100 mb-1 text-sm md:text-base">Wednesday, October 29, 2025</p>
-            <p className="text-teal-200 text-sm md:text-base">Havana Royale Halls, Ibadan, Nigeria</p>
+            <p className="text-teal-200 text-sm md:text-base">Havana Royale Hall, Ibadan, Nigeria</p>
           </div>
 
           {/* Navigation Links */}
