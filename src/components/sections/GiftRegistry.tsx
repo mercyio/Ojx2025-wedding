@@ -8,7 +8,7 @@ import Button from '../ui/Button';
 const GiftRegistry = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [copiedField, setCopiedField] = useState<string | null>(null);
-  
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -21,114 +21,106 @@ const GiftRegistry = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-6 ">
-      <SectionTitle 
-        title="Gift Registry" 
-        // subtitle="Your presence is our present, but if you wish to give a gift"
-      />
+    <div className="container mx-auto px-4 md:px-6">
+      <SectionTitle title="Gift Registry" />
 
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12 ">
+        <div className="text-center mb-12">
           <p className="italic text-gold-700 font-serif text-lg">
             "Your presence is our present, but if you wish to give a gift"
           </p>
         </div>
 
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center max-w-md w-full"
+            className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow text-center max-w-md w-full h-[380px] flex flex-col justify-between"
           >
             <AnimatePresence mode="wait">
               {showDetails ? (
-                <motion.div 
+                <motion.div
                   key="bank-details"
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ type: "spring", duration: 0.5 }}
-                  className="relative z-10"
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ type: 'spring', duration: 0.4 }}
+                  className="relative z-10 flex flex-col justify-between h-full"
                 >
-                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
-                  
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
-                    className="inline-flex items-center justify-center w-24 h-24 my-6 rounded-full bg-gradient-to-br from-teal-100 to-gold-100"
-                  >
-                    <Heart className="w-12 h-12 text-teal-600 fill-current" />
-                  </motion.div>
-                  
-                  <h3 className="font-serif text-2xl text-teal-800 mb-6">Bank Account Details</h3>
-                  
-                  <div className="space-y-5 mb-8">
-                    <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
-                      <p className="text-gray-700 font-medium mb-2 text-sm">Account Name</p>
-                      <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold">Vincent Joshua O.</p>
-                        <button 
-                          onClick={() => handleCopyAccount("Vincent Joshua O.", "name")}
-                          className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
-                          aria-label="Copy account name"
-                        >
-                          {copiedField === "name" ? 
-                            <Check className="h-5 w-5" /> : 
-                            <Copy className="h-5 w-5" />
-                          }
-                        </button>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 via-gold-400 to-teal-400 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
+
+                  <div className="flex flex-col items-center">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: 'spring', duration: 0.4, delay: 0.1 }}
+                      className="inline-flex items-center justify-center w-16 h-16 my-4 rounded-full bg-gradient-to-br from-teal-100 to-gold-100"
+                    >
+                      <Heart className="w-8 h-8 text-teal-600 fill-current" />
+                    </motion.div>
+
+                    <h3 className="font-serif text-xl text-teal-800 mb-4">Bank Account Details</h3>
+
+                    <div className="space-y-3 text-left w-full">
+                      {/* Account Name */}
+                      <div className="bg-teal-50 p-3 rounded-lg text-sm">
+                        <p className="text-gray-700 text-xs mb-1">Account Name</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-teal-800 font-medium">Vincent Joshua O.</span>
+                          <button
+                            onClick={() => handleCopyAccount("Vincent Joshua O.", "name")}
+                            className="text-teal-600 hover:text-teal-800 p-1 rounded-full hover:bg-teal-100 transition"
+                            aria-label="Copy account name"
+                          >
+                            {copiedField === "name" ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
-                      <p className="text-gray-700 font-medium mb-2 text-sm">Bank Name</p>
-                      <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold">Access Bank of Nigeria</p>
-                        <button 
-                          onClick={() => handleCopyAccount("Access Bank of Nigeria", "bank")}
-                          className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
-                          aria-label="Copy bank name"
-                        >
-                          {copiedField === "bank" ? 
-                            <Check className="h-5 w-5" /> : 
-                            <Copy className="h-5 w-5" />
-                          }
-                        </button>
+
+                      {/* Bank Name */}
+                      <div className="bg-teal-50 p-3 rounded-lg text-sm">
+                        <p className="text-gray-700 text-xs mb-1">Bank Name</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-teal-800 font-medium">Access Bank of Nigeria</span>
+                          <button
+                            onClick={() => handleCopyAccount("Access Bank of Nigeria", "bank")}
+                            className="text-teal-600 hover:text-teal-800 p-1 rounded-full hover:bg-teal-100 transition"
+                            aria-label="Copy bank name"
+                          >
+                            {copiedField === "bank" ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    
-                    <div className="bg-teal-50 p-5 rounded-xl mx-auto max-w-sm">
-                      <p className="text-gray-700 font-medium mb-2 text-sm">Account Number</p>
-                      <div className="flex items-center justify-between">
-                        <p className="text-teal-800 font-semibold tracking-wider">0695285216</p>
-                        <button 
-                          onClick={() => handleCopyAccount("0695285216", "number")}
-                          className="text-teal-600 hover:text-teal-800 p-2 rounded-full hover:bg-teal-100 transition-colors"
-                          aria-label="Copy account number"
-                        >
-                          {copiedField === "number" ? 
-                            <Check className="h-5 w-5" /> : 
-                            <Copy className="h-5 w-5" />
-                          }
-                        </button>
+
+                      {/* Account Number */}
+                      <div className="bg-teal-50 p-3 rounded-lg text-sm">
+                        <p className="text-gray-700 text-xs mb-1">Account Number</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-teal-800 font-medium tracking-wide">0695285216</span>
+                          <button
+                            onClick={() => handleCopyAccount("0695285216", "number")}
+                            className="text-teal-600 hover:text-teal-800 p-1 rounded-full hover:bg-teal-100 transition"
+                            aria-label="Copy account number"
+                          >
+                            {copiedField === "number" ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-4">
-                    <p className="text-gray-600 text-sm italic mb-6">
+                    <p className="text-gray-500 text-xs italic mb-3">
                       Thank you for the gift!
                     </p>
-                    
-                    <Button 
+                    <Button
                       onClick={() => setShowDetails(false)}
                       variant="outline"
-                      className="hover:scale-105 transform transition-transform"
+                      className="text-sm px-3 py-1"
                     >
-                      <ArrowLeft className="w-4 h-4 mr-2" />
+                      <ArrowLeft className="w-3 h-3 mr-2" />
                       Back
                     </Button>
                   </div>
@@ -139,18 +131,19 @@ const GiftRegistry = () => {
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  
+                  className="flex flex-col justify-center items-center h-full"
                 >
-                  <div className="flex justify-center mb-4 ">
-                    <CreditCard className="h-12 w-12 text-teal-500" />
+                  <div className="mb-4">
+                    <CreditCard className="h-10 w-10 text-teal-500" />
                   </div>
-                  <h3 className="font-serif text-2xl text-teal-800 mb-3">Cash Gift</h3>
-                  <p className="text-gray-600 mb-6">
+                  <h3 className="font-serif text-xl text-teal-800 mb-2">Cash Gift</h3>
+                  <p className="text-gray-600 text-sm mb-6 px-2">
                     We would be honored if you would consider celebrating with us with a monetary gift.
                   </p>
-                  <Button 
+                  <Button
                     variant="secondary"
                     onClick={() => setShowDetails(true)}
+                    className="text-sm px-4 py-2"
                   >
                     See Details
                   </Button>
@@ -159,7 +152,6 @@ const GiftRegistry = () => {
             </AnimatePresence>
           </motion.div>
         </div>
-
       </div>
     </div>
   );
