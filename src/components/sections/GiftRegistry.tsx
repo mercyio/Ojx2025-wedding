@@ -66,7 +66,7 @@ const GiftRegistry = () => {
                     <div className="space-y-3 text-left w-full">
                       {/* Account Name */}
                       <div className="bg-teal-50 p-3 rounded-lg text-sm">
-                        <p className="text-gray-700 text-xs mb-1">Account Name</p>
+                        <p className="text-gray-500 text-xs mb-1">Account Name</p>
                         <div className="flex items-center justify-between">
                           <span className="text-teal-800 font-medium">Vincent Joshua O.</span>
                           <button
@@ -81,7 +81,7 @@ const GiftRegistry = () => {
 
                       {/* Bank Name */}
                       <div className="bg-teal-50 p-3 rounded-lg text-sm">
-                        <p className="text-gray-700 text-xs mb-1">Bank Name</p>
+                        <p className="text-gray-500 text-xs mb-1">Bank Name</p>
                         <div className="flex items-center justify-between">
                           <span className="text-teal-800 font-medium">Access Bank of Nigeria</span>
                           <button
@@ -96,7 +96,7 @@ const GiftRegistry = () => {
 
                       {/* Account Number */}
                       <div className="bg-teal-50 p-3 rounded-lg text-sm">
-                        <p className="text-gray-700 text-xs mb-1">Account Number</p>
+                        <p className="text-gray-500 text-xs mb-1">Account Number</p>
                         <div className="flex items-center justify-between">
                           <span className="text-teal-800 font-medium tracking-wide">0695285216</span>
                           <button
