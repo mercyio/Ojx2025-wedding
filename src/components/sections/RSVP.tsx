@@ -87,14 +87,14 @@ const copyToClipboard = async (number: string) => {
   try {
     await navigator.clipboard.writeText(number);
     setCopiedNumber(number);
-    toast.success('Phone number copied!', {
-      icon: '📋',
-      style: {
-        borderRadius: '10px',
-        background: '#fff',
-        color: '#333',
-      },
-    });
+    // toast.success('Phone number copied!', {
+    //   icon: '📋',
+    //   style: {
+    //     borderRadius: '10px',
+    //     background: '#fff',
+    //     color: '#333',
+    //   },
+    // });
     
     // Reset the copied state after 2 seconds
     setTimeout(() => {
