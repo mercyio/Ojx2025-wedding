@@ -58,10 +58,10 @@ const GiftRegistry = () => {
                       transition={{ type: 'spring', duration: 0.4, delay: 0.1 }}
                       className="inline-flex items-center justify-center w-16 h-16 my-4 rounded-full bg-gradient-to-br from-teal-100 to-gold-100"
                     >
-                      <Heart className="w-8 h-8 text-teal-600 fill-current" />
+                      <Heart className="w-5 h-5 text-teal-600 fill-current" />
                     </motion.div>
 
-                    <h3 className="font-serif text-xl text-teal-800 mb-4">Bank Account Details</h3>
+                    {/* <h3 className="font-serif text-xl text-teal-800 mb-4">Bank Account Details</h3> */}
 
                     <div className="space-y-3 text-left w-full">
                       {/* Account Name */}
