@@ -8,8 +8,8 @@ const OurStory = () => {
   const storyPoints = [
     {
       title: "First Meeting",
-      dateOmolara: "April 12, 2022",
-      dateJoshua: "April 12, 2022",
+      dateOmolara: "April 12, 2023",
+      dateJoshua: "April 12, 2023",
       omolaraStory: "I never thought a simple lunch break could change my life. Joshua walked up to me with a warm smile and a curious question... That moment stayed with me.",
       joshuaStory: "She had this calm confidence that drew me in. I couldn’t let the day pass without saying something. One small conversation turned into something unforgettable.",
       icon: <Star className="h-6 w-6" />,
@@ -17,8 +17,8 @@ const OurStory = () => {
     },
     {
       title: "First Date",
-      dateOmolara: "April 28, 2022",
-      dateJoshua: "April 28, 2022",
+      dateOmolara: "April 28, 2023",
+      dateJoshua: "April 28, 2023",
       omolaraStory: "He took me to this quiet little restaurant with live music. I was impressed by his thoughtfulness and how easy it was to talk to him for hours.",
       joshuaStory: "I spent days planning the perfect first date. I wanted everything to be special for her. I'll never forget her smile when she heard her favorite song playing.",
       icon: <Calendar className="h-6 w-6" />,
@@ -26,8 +26,8 @@ const OurStory = () => {
     },
     {
       title: "Falling in Love",
-      dateOmolara: "September 2022",
-      dateJoshua: "August 2022",
+      dateOmolara: "September 2023",
+      dateJoshua: "August 2023",
       omolaraStory: "It was one big moment. How he remembered little details, how he made me laugh, how he supported me through challenges.",
       joshuaStory: "I think I knew I loved her when she called me at 2 AM to to tell me she got the project she was working on.      Her passion and dedication amazed me.",
       icon: <Heart className="h-6 w-6" />,
@@ -36,8 +36,8 @@ const OurStory = () => {
     },
     {
       title: "The Proposal",
-      dateOmolara: "December 24, 2023",
-      dateJoshua: "December 24, 2023",
+      dateOmolara: "December 24, 2024",
+      dateJoshua: "December 24, 2024",
       omolaraStory: "It was a quet beutiful night under the stars. He seemed nervous, then suddenly got down on one knee.     It was perfect. I couldn't stop crying!",
       joshuaStory: "I had the ring for months waiting for the perfect moment. When I saw her looking up at the stars that night, I knew it was time. Best 'yes' I've ever heard!",
       icon: <MapPin className="h-6 w-6" />,
