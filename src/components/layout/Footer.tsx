@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="font-serif text-xl md:text-3xl text-gold-300">Joshua</span>
             </div>
             <p className="text-teal-100 mb-1 text-sm md:text-base">Wednesday, October 29, 2025</p>
-            <p className="text-teal-200 text-sm md:text-base">Havana Royale Halls, Oyo State, Nigeria</p>
+            <p className="text-teal-200 text-sm md:text-base">Havana Royale Halls, Ibadan, Nigeria</p>
           </div>
 
           {/* Navigation Links */}
@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* Bottom Centered Copyright */}
         <div className="flex flex-col items-center text-xs md:text-sm text-teal-300 text-center">
-          <p>© 2025 Omolara & Joshua Wedding. All rights reserved.</p>
+          <p>© 2025 Omolara & Joshua wedding. All rights reserved.</p>
           <p className="mt-1 md:mt-2 flex items-center justify-center">
             Built with  <Heart className="h-3 w-3 md:h-5 md:w-5 fill-gold-400 stroke-gold-400 animate-pulse" /> by 
             <a 
