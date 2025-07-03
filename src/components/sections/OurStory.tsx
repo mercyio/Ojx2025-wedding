@@ -8,8 +8,8 @@ const OurStory = () => {
   const storyPoints = [
     {
       title: "First Meeting",
-      dateOmolara: "April 12, 2023",
-      dateJoshua: "April 12, 2023",
+      dateOmolara: "April 12, 2022",
+      dateJoshua: "April 12, 2022",
       omolaraStory: "I never thought a simple lunch break could change my life. Joshua walked up to me with a warm smile and a curious question... That moment stayed with me.",
       joshuaStory: "She had this calm confidence that drew me in. I couldn’t let the day pass without saying something. One small conversation turned into something unforgettable.",
       icon: <Star className="h-6 w-6" />,
