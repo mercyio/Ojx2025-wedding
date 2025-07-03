@@ -8,7 +8,7 @@ const TriviaSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <TriviaGame
           title={
-            <div className="flex items-center justify-center text-4xl font-serif text-teal-900">
+            <div className="flex items-center justify-center text-2xl font-serif text-teal-900">
               <span className="mr-1">O</span>
               <Heart className="w-8 h-8 mx-1 text-gold-400 animate-pulse fill-gold-400 stroke-gold-400" />
               <span className="ml-1">J Trivia Challenge</span>
